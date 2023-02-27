@@ -1,0 +1,14 @@
+global-css:
+  version: 1.x
+  css:
+    theme:
+      css/style.css: {}
+  dependencies:
+    - core/drupal
+    - core/drupal.form
+    - core/drupal.dialog.ajax
+    - core/drupal.dialog.ajax_library
+    - core/drupal.collapse
+    - core/drupal.details
+    - core/drupal.dropbutton
+    - core/drupal.dropbutton.ajax

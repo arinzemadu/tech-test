@@ -1,0 +1,8 @@
+.layout-2col-4060 .layout-builder__region--left {
+  float: left;
+  width: 40%;
+}
+.layout-2col-4060 .layout-builder__region--right {
+  float: right;
+  width: 60%;
+}

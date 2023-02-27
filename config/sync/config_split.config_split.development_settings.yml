@@ -1,0 +1,18 @@
+uuid: ce28559a-5a55-4ce9-af2a-95036b5bc359
+langcode: en
+status: true
+dependencies: {  }
+id: development_settings
+label: 'Development settings'
+description: 'These are the settings for local development'
+weight: 0
+stackable: false
+storage: folder
+folder: ../config/development
+module:
+  dblog: 0
+  maillog: 0
+  views_ui: 0
+theme: {  }
+complete_list: {  }
+partial_list: {  }

@@ -1,0 +1,9 @@
+uuid: 5f22dce8-65a5-4f20-a2dc-3ceaa05eabd9
+langcode: en
+status: true
+dependencies: {  }
+id: publisher
+label: publisher
+weight: 5
+is_admin: null
+permissions: {  }

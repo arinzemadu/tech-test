@@ -1,0 +1,99 @@
+uuid: a2e40115-427a-468e-ace8-00b47026f97c
+langcode: en
+status: true
+dependencies: {  }
+id: notify_reviewers_of_content_created_for_review
+label: 'Notify reviewers of content created for review'
+events:
+  -
+    event_name: 'rules_entity_insert:content_moderation_state'
+  -
+    event_name: 'rules_entity_update:content_moderation_state'
+description: ''
+tags: {  }
+config_version: '3'
+expression:
+  id: rules_rule
+  uuid: a46cec9b-eb56-4ade-b06c-48890df46ef6
+  weight: 0
+  conditions:
+    id: rules_and
+    uuid: fb920c33-aaf6-4848-92a5-aff91c29041d
+    weight: 0
+    conditions:
+      -
+        id: rules_condition
+        uuid: 69774d71-d3f8-42ac-80c8-58408bd24965
+        weight: 0
+        condition_id: rules_data_comparison
+        negate: false
+        context_values:
+          operation: '=='
+          value: needs_review
+        context_mapping:
+          data: content_moderation_state.moderation_state.value
+        context_processors:
+          operation:
+            rules_tokens: {  }
+          value:
+            rules_tokens: {  }
+        provides_mapping: {  }
+  actions:
+    id: rules_action_set
+    uuid: 3df2f4f5-234e-4e59-9353-cfca96834ac0
+    weight: 0
+    actions:
+      -
+        id: rules_action
+        uuid: 76d857b1-6d7c-4792-abbc-e1e22356a8db
+        weight: 0
+        action_id: rules_entity_fetch_by_id
+        context_values:
+          type: node
+        context_mapping:
+          entity_id: content_moderation_state.content_entity_id.value
+        context_processors:
+          type:
+            rules_tokens: {  }
+        provides_mapping: {  }
+      -
+        id: rules_action
+        uuid: d3fec16e-ea03-4bf0-a6e7-3baddc6f5d5d
+        weight: 0
+        action_id: rules_send_email
+        context_values:
+          to:
+            - mdulabs@gmail.com
+          subject: test
+          message: 'Please review {{ entity_fetched.title.value }} at https://example.com/node/{{ entity_fetched.nid.value }}'
+          reply: ''
+          language: ''
+        context_mapping: {  }
+        context_processors:
+          to:
+            rules_tokens: {  }
+          subject:
+            rules_tokens: {  }
+          message:
+            rules_tokens: {  }
+          reply:
+            rules_tokens: {  }
+          language:
+            rules_tokens: {  }
+        provides_mapping: {  }
+      -
+        id: rules_action
+        uuid: 0e2b2313-9918-4a8f-8e78-9e4018693fcd
+        weight: 0
+        action_id: rules_system_message
+        context_values:
+          type: status
+          repeat: false
+        context_mapping:
+          message: content_moderation_state.moderation_state.value
+        context_processors:
+          type:
+            rules_tokens: {  }
+          repeat:
+            rules_tokens: {  }
+        provides_mapping: {  }

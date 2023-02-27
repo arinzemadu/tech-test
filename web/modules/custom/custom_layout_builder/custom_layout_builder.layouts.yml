@@ -1,0 +1,22 @@
+layout_custom_one_column:                 # Section main key
+  label: '[CUSTOM] One column'            # Section title
+  category: 'Custom layouts'
+  path: layouts/custom_onecol_section     # Relative path from the template
+  template: layout--custom-onecol-section # Template name
+  default_region: first
+  icon_map:
+    - [first]
+  regions:                                # Regions table
+    first:                                # Region machine name
+      label: First                        # Region title
+layout_custom_two_column:                 # Section main key
+  label: '[CUSTOM] Two column'            # Section title
+  category: 'Custom layouts'
+  path: layouts/custom_twocol_section     # Relative path from the template
+  template: layout--custom-twocol-section # Template name
+  default_region: first
+  icon_map:
+    - [Second]
+  regions:                                # Regions table
+    first:                                # Region machine name
+      label: Second                        # Region title

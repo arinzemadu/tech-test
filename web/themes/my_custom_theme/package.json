@@ -1,0 +1,21 @@
+{
+  "name": "my_custom_theme",
+  "version": "1.0.0",
+  "description": "My Custom Theme",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "postcss css/style.css -o css/style.min.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.19"
+  },
+  "dependencies": {
+    "@storybook/addon-controls": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "postcss-cli": "^10.1.0"
+  }
+}

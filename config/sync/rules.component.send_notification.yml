@@ -1,0 +1,52 @@
+uuid: 9c0b005b-3248-4d11-8c20-3518f8c7127b
+langcode: en
+status: true
+dependencies: {  }
+id: send_notification
+label: 'send notification'
+description: ''
+tags: {  }
+config_version: '3'
+component:
+  context_definitions: {  }
+  provided_context_definitions: {  }
+  expression:
+    id: rules_rule
+    uuid: 8c9f0283-79ea-474b-8cfd-ec8b1a2dc115
+    weight: 0
+    conditions:
+      id: rules_and
+      uuid: 4bcbc2aa-477e-43d6-8b0b-b70a6b585a96
+      weight: 0
+      conditions:
+        -
+          id: rules_condition
+          uuid: 169933fa-caba-4fd2-8316-9c35d32441cf
+          weight: 0
+          condition_id: rules_data_comparison
+          negate: false
+          context_values:
+            operation: '=='
+            value: 'needs review'
+          context_mapping:
+            data: '@node.node_route_context:node.moderation_state.value'
+          context_processors:
+            operation:
+              rules_tokens: {  }
+            value:
+              rules_tokens: {  }
+          provides_mapping: {  }
+    actions:
+      id: rules_action_set
+      uuid: 38de7313-5dbd-4935-9b81-2e4cfe9f2ff7
+      weight: 0
+      actions:
+        -
+          id: rules_action
+          uuid: 7167a3dc-b92f-4f22-a43c-79ca65a33677
+          weight: 0
+          action_id: 'rules_component:send_notification'
+          context_values: {  }
+          context_mapping: {  }
+          context_processors: {  }
+          provides_mapping: {  }

@@ -1,0 +1,17 @@
+uuid: 9ba8965d-e058-4b04-b8f7-0628d5179822
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.page
+    - workflows.workflow.editorial
+  module:
+    - content_moderation
+    - node
+id: editor
+label: editor
+weight: 4
+is_admin: null
+permissions:
+  - 'create page content'
+  - 'use editorial transition archived_draft'
