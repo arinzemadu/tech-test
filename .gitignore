@@ -1,0 +1,27 @@
+# Ignore Drupal's default files directory
+/web/sites/default/files/
+
+# Ignore core files and directories
+/web/core/*
+
+# Ignore vendor files and directories (if using Composer)
+/vendor/*
+
+# Ignore contributed module files and directories
+/web/modules/contrib/*
+
+# Ignore contributed theme files and directories
+web/themes/my_custom_theme/node_modules
+
+# Ignore Apache .htaccess file
+/web/.htaccess
+
+# Ignore local settings.php files for all sites
+/web/sites/*/settings.php
+
+# Ignore IDE configuration files
+.idea/
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
