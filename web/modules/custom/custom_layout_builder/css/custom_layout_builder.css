@@ -1,8 +1,29 @@
-.layout-2col-4060 .layout-builder__region--left {
-  float: left;
-  width: 40%;
+
+
+.layout-wrapper {
+  display: flex;
+  flex-wrap: wrap;
 }
-.layout-2col-4060 .layout-builder__region--right {
-  float: right;
-  width: 60%;
+
+.layout-column-first, .layout-column-second  {
+  flex: 0 1 100%;
+}
+
+@media screen and (min-width: 40em) {
+
+.layout-wrapper {
+  display: flex;
+}
+
+.layout-column {
+  padding: 1rem;
+}
+
+.layout-column-first {
+  flex: 0 1 60%;
+}
+
+.layout-column-second {
+  flex: 0 1 40%;
+}
 }
