@@ -1,0 +1,5 @@
+custom-layout-builder:
+  version: 1.x
+  css:
+    theme:
+      css/custom_layout_builder.css: {}

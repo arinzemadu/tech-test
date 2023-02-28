@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Default implementation for a custom layout onecol section.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ * - region_attributes: HTML attributes for the region <div>.
+ * - settings: An array of configured settings for the layout.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if content %}
+  <div class="layout-wrapper"{{ attributes }}>
+    {% if content.first %}
+      <div class="layout-column layout-column-first" {{ region_attributes.first }}>
+        {{ content.first }}
+      </div>
+    {% endif %}
+
+    {% if content.second %}
+      <div class="layout-column layout-column-second" {{ region_attributes.second }}>
+        {{ content.second }}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}
+
+
